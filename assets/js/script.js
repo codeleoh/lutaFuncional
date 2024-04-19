@@ -1,5 +1,5 @@
 const char = createMage('Leonardo');
-const monster = createBigMonster();
+const monster = createLittleMonster();
 
 stage.start(
     char,

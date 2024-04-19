@@ -94,11 +94,27 @@ const stage = {
         if(actualAttack > actualDefense) {
             attaked.life -= actualAttack;
             attaked.life = attaked.life < 0 ? 0 : attaked.life;
-            console.log(`${attacking.name} causou ${actualAttack} de dano em ${attaked.name}`);
+            log.addMessage(`${attacking.name} causou ${actualAttack} de dano em ${attaked.name}`);
         } else {
-            console.log(`${attaked.name} conseguiu defender...`);
+            log.addMessage(`${attaked.name} conseguiu defender...`);
         }
 
         this.update();
+    }
+}
+
+const log = {
+    list: [],
+    addMessage(msg) {
+        this.list.push(msg);
+        this.render();
+    },
+    render() {
+        const logEl = document.querySelector('.log');
+        logEl.innerHTML = '';
+
+        for(let i in this.list) {
+            logEl.innerHTML += `<li>${this.list[i]}</li>`;
+        }
     }
 }
