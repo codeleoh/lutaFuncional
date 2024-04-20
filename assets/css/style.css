@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
 .fightarea {
     display: flex;
     gap: 1.5rem;
@@ -5,22 +7,63 @@
 
 #char, #monster {
     flex:1;
+    font-family: 'Teko';
+    font-size: 1.3rem;
+}
+
+#char {
+    background-color: #08e72d;
+    border-radius: 0.5rem;
+    border: solid 1px #000;
+}
+
+#monster {
+    background-color: orangered;
+    border-radius: 0.5rem;
+    border: solid 1px #000;
 }
 
 .lifebar {
-    height: 10px;
-    border: 1px solid #333;
+    height: 1rem;
+    border: 2px solid #000;
     border-radius: 0.5rem;
+}
+
+.bar {
+    border: solid 1px #000;
 }
 
 .lifebar .bar {
     height: inherit;
-    background-color: red;
+    background-color: green;
     border-radius: 0.5rem;
+    border: solid 1px #000;
 }
 
 .log {
     border: 1px dotted #999;
     height: 200px;
     overflow-y: scroll;
+    font-family: 'Teko';
+    font-size: 1.4rem;
+}
+
+.attackButton {
+    height: 2.5rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: solid 2px #000;
+    background-color: #999;
+}
+
+.areaButton {
+    display: flex;
+    justify-content: center;
+}
+
+.log {
+    background-color: #797373;
+    border-radius: 0.5rem;
+    border: solid 2px #000;
 }

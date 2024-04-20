@@ -32,8 +32,8 @@ const createLittleMonster = () => {
     return {
         ...defaultCharacter,
         name: 'Little Monster',
-        life: 40,
-        maxLife: 40,
+        life: 51,
+        maxLife: 51,
         attack: 4,
         defense: 5
     }
@@ -77,11 +77,27 @@ const stage = {
         this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(1)} HP`;
         let f2Pct = (this.fighter2.life / this.fighter2.maxLife * 100);
         this.fighter2El.querySelector('.bar').style.width = `${f2Pct}%`; 
+
+        if (this.fighter1.life <= 50) {
+            this.fighter1El.querySelector('.bar').style.backgroundColor = 'yellow';
+        }
+        
+        if (this.fighter1.life <= 20) {
+            this.fighter1El.querySelector('.bar').style.backgroundColor = 'red';
+        }
+
+        if (this.fighter2.life <= 50) {
+            this.fighter2El.querySelector('.bar').style.backgroundColor = 'yellow';
+        }
+        
+        if (this.fighter2.life <= 20) {
+            this.fighter2El.querySelector('.bar').style.backgroundColor = 'red';
+        }
     },
 
     doAttack(attacking, attaked) {
         if(attacking.life <= 0 || attaked.life <= 0) {
-            console.log("Alguém tá morto, não pode atacar");
+            log.addMessage("Alguém tá morto, não pode atacar");
             return;
         }
 

@@ -1,5 +1,5 @@
-const char = createMage('Leonardo');
-const monster = createLittleMonster();
+const char = createKnight('Leonardo');
+const monster = createBigMonster();
 
 stage.start(
     char,
